@@ -24,6 +24,10 @@ class PostsController < ApplicationController
 	end
  
 private
+
+def edit
+  @post = Post.find(params[:id])
+end
  
  
 # We pass the permitted fields in as *args;
@@ -34,7 +38,5 @@ private
   		params.require(:post).permit(*args)
 	end
 
-	def edit
-	  @post = Post.find(params[:id])
-	end
+	
 end
